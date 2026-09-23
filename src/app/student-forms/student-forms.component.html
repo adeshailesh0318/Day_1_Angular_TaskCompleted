@@ -1,0 +1,69 @@
+<h1 class="text-center">Student Form</h1>
+
+<div class="container mt-4">
+
+    <h1 class="text-center mb-4">
+        Student Registration Form
+    </h1>
+    <div class="container">
+
+        <div class="row justify-content-center">
+            <div class="col col-md-4">
+
+
+                <form #studentForm="ngForm" (ngSubmit)="saveStudent(studentForm)">
+
+                    <div class="mb-3">
+                        <label class="form-label"><b>First Name</b></label>
+
+                        <input type="text" class="form-control" name="firstName" [(ngModel)]="student.firstName"
+                            #firstName="ngModel" placeholder="Enter first name">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label"><b>Last Name</b></label>
+                        <input type="text" class="form-control" name="lastName" [(ngModel)]="student.lastName"
+                            #lastName="ngModel" placeholder="Enter last name">
+                       
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label"><b>Email</b></label>
+
+                        <input type="email" class="form-control" name="email" [(ngModel)]="student.email"
+                            #email="ngModel"  placeholder="Enter email">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label"><b>Mobile</b></label>
+
+                        <input type="text" class="form-control" name="mobile" [(ngModel)]="student.mobile"
+                             placeholder="Enter mobile number">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label"><b>Age</b></label>
+                        <input type="number" class="form-control" name="age" [(ngModel)]="student.age" placeholder="Enter age">
+                    </div>
+                 
+                    <div class="text-center mt-4">
+
+                        <button type="submit" class="btn btn-primary me-2">
+                            Save Student
+                        </button>
+                        <button type="button" class="btn btn-secondary" (click)="studentForm.resetForm()">Reset</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div>
+    <h3>StudentData!</h3>
+    <p appHightlight><strong >First Name:</strong> {{ student.firstName }}</p>
+    <p appHightlight><strong>Last Name:</strong> {{ student.lastName }}</p>
+    <p appHightlight><strong>Email:</strong> {{ student.email }}</p>
+    <p appHightlight><strong>Mobile:</strong> {{ student.mobile }}</p>
+    <p appHightlight><strong>Age:</strong> {{ student.age }}</p>
+</div>
